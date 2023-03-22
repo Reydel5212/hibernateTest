@@ -1,15 +1,13 @@
 package org.hibernateApp.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "person")
 public class person {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // if has auto_incremen
     private int id;
     @Column(name="name")
     private String name;
@@ -22,7 +20,7 @@ public class person {
 
     public person() {}
 
-    public person(int id, String name, int age, String address,int tel){
+    public person(String name, int age, String address,int tel){
         this.id = id;
         this.name = name;
         this.age = age;

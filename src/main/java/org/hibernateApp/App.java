@@ -14,8 +14,18 @@ public class App
         Session session = sessionFactory.getCurrentSession();
         try {
             session.beginTransaction();
-            person person = session.get(person.class, 1);
-            System.out.println(person.getName() + " " + person.getAge() + " " + person.getAddress() + " " + person.getTel());
+
+            //create new person by hibernate
+            /*person person = new person("Mary", 21, "Murmansk", 870756897);
+            session.save(person);*/
+
+            //update by hibernate
+            /*person person = session.get(person.class, 1);
+            person.setAge(61);*/
+
+            //delete by hibernate
+            /*person person = session.get(person.class, 2);
+            session.delete(person);*/
             session.getTransaction().commit();
         } finally {
             sessionFactory.close();
